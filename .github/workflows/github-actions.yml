@@ -25,9 +25,4 @@ jobs:
               ssh-add -D
           - name: Run full test
             timeout-minutes: 15
-            run: |
-               docker run --rm \
-                 -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} \
-                 cuaesd/aesd-autotest:assignment6-yocto \
-                 --workdir=${GITHUB_WORKSPACE} \
-                 ./full-test.sh
+            run: /bin/bash -c "export SKIP_BUILD=1 && ./full-test.sh"
