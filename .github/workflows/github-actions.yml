@@ -18,8 +18,7 @@ jobs:
                  ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           - name: Run build
             timeout-minutes: 600
-            run: |
-		 echo "Skipping the build"
+            run: echo "Skipping the build"
           - name: Cleanup
             if: always()
             run: |
